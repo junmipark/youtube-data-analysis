@@ -51,7 +51,7 @@
 
 ### 실제 테이블
 
-![실제 테이블](https://user-images.githubusercontent.com/92344242/151447750-d6f369ad-6899-4932-839d-a22f1ec31498.png)
+![실제 테이블](https://user-images.githubusercontent.com/92344242/151448269-f8c65390-fd19-4a27-90f0-20e61d23feb6.png)
 
 - 특이사항
   - Video는 Category 테이블의 category_id를 참조한다.
