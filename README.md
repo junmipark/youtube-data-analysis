@@ -51,12 +51,12 @@
 
 ### 실제 테이블
 
-![실제 테이블 이미지](https://user-images.githubusercontent.com/92344242/151416595-160839ce-aea5-42b4-9d44-e990b464be7e.png)
+![실제 테이블](https://user-images.githubusercontent.com/92344242/151447750-d6f369ad-6899-4932-839d-a22f1ec31498.png)
 
 - 특이사항
   - Video는 Category 테이블의 category_id를 참조한다.
-  - Information, Info_tag, Date는 Video 테이블의 video_id를 참조한다.
-  - 영상 정보 중 태그 정보에 대해서는 Info_tag라는 테이블로 따로 분리하였다.
+  - Information, Tags, Date는 Video 테이블의 video_id를 참조한다.
+  - 영상 정보 중 태그 정보에 대해서는 Tags라는 테이블로 따로 분리하였다.
 
 ## 주요 기능
 - 카테고리별로 인기 태그 상위 10개 조회하기
