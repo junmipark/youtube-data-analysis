@@ -11,6 +11,13 @@
 ## 개발 기간
 2019.11-2019.12
 
+## 기술 스택
+- Back-End: Python
+- Front-End: HTML/CSS, Bootstrap
+- Database: SQLite
+
+---
+
 ## 데이터베이스 구성
 
 ### 원본 데이터 (예시)
@@ -50,11 +57,6 @@
   - Video는 Category 테이블의 category_id를 참조한다.
   - Information, Info_tag, Date는 Video 테이블의 video_id를 참조한다.
   - 영상 정보 중 태그 정보에 대해서는 Info_tag라는 테이블로 따로 분리하였다.
-
-## 기술 스택
-- Back-End: Python
-- Front-End: HTML/CSS, Bootstrap
-- Database: SQLite
 
 ## 주요 기능
 - 카테고리별로 인기 태그 상위 10개 조회하기
