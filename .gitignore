@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# .csv & .json
+.csv
+.json
+
+# Data Base File
+.db
+
+#gitignorefile
+/gitignore
