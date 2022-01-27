@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block body %}
+<div class="row">
+    <table style="width : auto; position : relative;">
+        {% for entries in all_entries %}
+        <tr>
+            {% for entry in entries %}
+            <td id="entry">{{entry.tag}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block body5 %}
+<div class="row">
+  <table style="width : 100%; position : relative;">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>views</th>
+        <th>likes</th>
+        <th>dislikes</th>
+        <th>publish time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in ent %}
+      <tr>
+        <td id="entry" style="color : black;">{{entry.title}}</td>
+        <td id="entry" style="color : black; text-align : center;">{{entry.views}}</td>
+        <td id="entry" style="color : black; text-align : center;">{{entry.likes}}</td>
+        <td id="entry" style="color : black; text-align : center;">{{entry.dislikes}}</td>
+        <td id="entry" style="color : black; text-align : center;">{{entry.publish_time}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

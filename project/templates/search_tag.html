@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block body2 %}
+<div class="row">
+  <table style="width : 100%; position : relative;">
+    <thead>
+      <tr>
+        <th>tag</th>
+        <th>count</th>
+        <th>category</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries2 %}
+      <tr>
+        <td id="entry" style="color : black;">{{entry.tag}}</td>
+        <td id="entry" style="color : black;">{{entry.count}}</td>
+        <td id="entry" style="color : black;">{{entry.ct}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

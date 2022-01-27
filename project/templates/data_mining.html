@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% block body6 %}
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>훈련 세트 정확도</th>
+                <th>테스트 세트 정확도</th>
+                <th>샘플 크기</th>
+                <th>샘플 정확도</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in score %}
+            <tr>
+                <td id="entry" style="color : black; text-align : center;">{{entry.tr}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.ts}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.size}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.sample}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="row" style="margin-block: 30px;">
+    <table>
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>tags</th>
+                <th>views</th>
+                <th>likes</th>
+                <th>dislikes</th>
+                <th style="min-width: 150px;">predicted category</th>
+                <th style="min-width: 150px;">real category</th>
+                <th>matched</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entries in all_entries %}
+            {% for entry in entries %}
+            <tr>
+                <td id="entry" style="color : black;">{{entry.title}}</td>
+                <td id="entry" style="color : black; text-align : center; max-width: 200px; max-height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{entry.tags}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.view}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.like}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.dislike}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.predict}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.real}}</td>
+                <td id="entry" style="color : black; text-align : center;">{{entry.TF}}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

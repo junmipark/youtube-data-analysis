@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Database Term Project | Youtube Data Analysis</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Noto+Sans+KR|Noto+Serif+KR|Song+Myung&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="/static/device-mockups/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/new-age.css" rel="stylesheet">
+
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <style>
+    td, th{
+      min-width: 100px;
+    }
+
+    td:first-child, th:first-child {
+      text-align: left;
+    }
+
+    #datamining > div > div:nth-child(3){
+      display: grid;
+    }
+
+    #datamining > div > div:nth-child(3) > div{
+      justify-self: center;
+    }
+
+    th {
+      color: black;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      justify-items: center;
+    }
+
+    .container.h-100 {
+      justify-items: stretch;
+    }
+
+    .container * {
+      font-family: 'Gothic A1', sans-serif;
+    }
+
+    .row {
+      margin: 0;
+      text-align: center;
+    }
+
+    input[id="input-str"] {
+      background: transparent;
+      letter-spacing: 2px;
+      font-size: 11px;
+      text-align: center;
+      padding: 15px 45px;
+      margin: 0 auto;
+      border: dashed thin darksalmon;
+      color: black;
+    }
+
+    .btn-outline {
+      color: darksalmon;
+    }
+
+    section.features {
+      padding: 0;
+      margin-block: 50px;
+    }
+
+    form.userinput {
+      width: 1000px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="http://localhost:5000/">Hello World!</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#popular">Most Popular Tags</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#tag">Search #Tag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#category">#category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#datamining">datamining</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Team members</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Database Term Project : Youtube Data Analysis</h1>
+            <a class="btn btn-outline btn-xl js-scroll-trigger" href="#datamining" style="color: white;">data mining</a>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+          <div class="device-container">
+            <div class="device-mockup iphone6_plus portrait white">
+              <div class="device">
+                <div class="screen">
+                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                  <img src="/static/img/demo-screen-1.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="button">
+                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features" id="popular">
+    <div class="container">
+      <label style="font-family :'Gothic A1', sans-serif; font-size : medium; font-weight:700">카테고리별 인기 태그 TOP
+        10</label>
+      <div style="margin-block: 30px;">
+        <form class="userinput" method="POST" action="/show_entries" style="padding-bottom:5%">
+          <button class="btn btn-outline btn-xl js-scroll-trigger" type="submit"
+            style="font-size:medium; border-style: hidden;">클릭하여 결과 확인하기!</button>
+        </form>
+      </div>
+      <div style="margin-block: 30px; color: black;">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="tag">
+    <div class="container">
+      <label style="font-family :'Gothic A1', sans-serif; font-size : medium; font-weight:700">카테고리별로 태그 등장빈도
+        확인하기</label>
+      <div style="margin-block: 30px;">
+        <form class="userinput" method="POST" action="/search_tag">
+          <input id="input-str" name="variable" placeholder="태그를 입력하세요.">
+          <button class="btn btn-outline btn-xl js-scroll-trigger" type="submit">submit</button>
+        </form>
+      </div>
+      <div style="margin-block: 30px;">
+        {% block body2 %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+  <section class="features" id="tag2">
+    <div class="container">
+      <label style="font-family :'Gothic A1', sans-serif; font-size : medium; font-weight:700">태그로 영상 검색하기</label>
+      <div style="margin-block: 30px;">
+        <form class="userinput" method="POST" action="/search_tag2">
+          <input id="input-str" name="variable" placeholder="태그를 입력하세요.">
+          <button class="btn btn-outline btn-xl js-scroll-trigger" type="submit">submit</button>
+        </form>
+      </div>
+      <div style="margin-block: 30px;">
+        {% block body5 %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="category">
+    <div class="container">
+      <label style="font-family :'Gothic A1', sans-serif; font-size : medium; font-weight:700">카테고리별로 영상 조회하기</label>
+      <div style="margin-block: 30px;">
+        <form class="userinput" method="POST" action="/search_category">
+          <select name="category"
+            style="font-family:'Gothic A1', sans-serif; background : white; width : auto; border:hidden">
+            <option value="1">Film & Animation</option>
+            <option value="2">Autos & Vehicles</option>
+            <option value="10">Music</option>
+            <option value="15">Pets & Animals</option>
+            <option value="17">Sports</option>
+            <option value="19">Travel & Events</option>
+            <option value="20">Gaming</option>
+            <option value="22">People & Blogs</option>
+            <option value="23">Comedy</option>
+            <option value="24">Entertainment</option>
+            <option value="25">News & Politics</option>
+            <option value="26">Howto & Style</option>
+            <option value="27">Education</option>
+            <option value="28">Science & Technology</option>
+            <option value="43">Shows</option>
+          </select>
+          <select name="option" style="font-family:'Gothic A1', sans-serif; background : white; border:hidden">
+            <option value="publish_time DESC" selected="selected">최신순</option>
+            <option value="publish_time">오래된 순</option>
+            <option value="views DESC">조회수 많은 순</option>
+            <option value="likes DESC">좋아요 많은 순</option>
+          </select>
+          <button class="btn btn-outline btn-xl js-scroll-trigger" type="submit">submit</button>
+        </form>
+      </div>
+      <div style="margin-block: 30px;">
+        {% block body3 %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="datamining">
+    <div class="container">
+      <label style="font-family :'Gothic A1', sans-serif; font-size : medium; font-weight:700">태그, 조회수, 좋아요 수, 싫어요 수로
+        카테고리 예측하기</label>
+      <div style="margin-block: 30px;">
+        <form class="userinput" method="POST" action="/data_mining" style="padding-bottom:5%">
+          <button class="btn btn-outline btn-xl js-scroll-trigger" type="submit"
+            style="font-size:medium; border-style: hidden;">클릭하여 결과 확인하기!</button>
+        </form>
+      </div>
+      <div style="margin-block: 30px;">
+        {% block body6 %}{% endblock %}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="contact bg-primary" id="contact" style="background: linear-gradient(to bottom, #ce5959, #654d4d);">
+    <div class="container">
+      <ul class="list-inline list-social">
+        <h2 style="font-family: 'Noto Sans KR', sans-serif; font-size : xx-large; color: white;">
+          충남대학교 전파정보통신공학과<br>
+          201701917 김영주<br>
+          201701933 박준미<br>
+        </h2>
+        <a href="http://bitly.kr/woPha0t" target="_blank" class="btn btn-outline btn-xl js-scroll-trigger"
+          style="color: white;">Do you have
+          any questions?</a>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; CNU ICE. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Thank You For Watching!</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/new-age.min.js"></script>
+
+</body>
+
+</html>
