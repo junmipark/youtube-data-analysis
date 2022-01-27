@@ -129,11 +129,11 @@ dmypy.json
 .pyre/
 
 # .csv & .json
-.csv
-.json
+*.csv
+*.json
 
 # Data Base File
-.db
+*.db
 
 #gitignorefile
-/gitignore
+gitignore/
