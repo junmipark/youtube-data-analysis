@@ -203,7 +203,7 @@ def extract_features():
         median = np.median(freq) # 태그 등장 빈도수에 대한 중간값 찾기
 
         for tag in Tags:
-            if Tags[tag] > median:
+            if Tags[tag] >= int(median):
                 FEATURES.append(tag)   
             
     return FEATURES
