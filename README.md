@@ -5,7 +5,7 @@
 - Youtube 데이터 분석하기
 
 ## 기획 의도 및 목표
-- Raw data를 가공하여 DB로 옮기고 이를 관리해보기
+- Raw data를 DB로 옮기고 이를 관리해보기
 - 예제를 통한 Data Mining 실습해보기
 
 ## 개발 기간
